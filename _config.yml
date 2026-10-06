@@ -1,0 +1,45 @@
+title: recursing.dev
+description: "Jon's personal blog, CV, and portfolio"
+url: "https://recursing.dev"
+baseurl: ""
+markdown: kramdown
+
+permalink: /blog/:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-archives
+
+jekyll-archives:
+  enabled: [tags]
+  layout: tag
+  permalinks:
+    tag: "/blog/tags/:name/"
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - node_modules
+  - src
+  - scripts
+  - package.json
+  - package-lock.json
+  - vite.config.ts
+  - vitest.config.ts
+  - tsconfig.json
+  - docs
+  - ascii.txt
+  - Gemfile
+  - Gemfile.lock
