@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+/* Jekyll templates live outside src/, so register them explicitly
+   alongside Tailwind's automatic project-wide content detection. */
+@source "../_layouts";
+@source "../_includes";
+@source "../_posts";
+@source "../*.md";
+
+@theme {
+  --color-bg0: #282828;
+  --color-bg1: #3c3836;
+  --color-bg2: #504945;
+  --color-fg0: #fbf1c7;
+  --color-fg1: #ebdbb2;
+  --color-red: #fb4934;
+  --color-orange: #fe8019;
+  --color-yellow: #fabd2f;
+  --color-green: #b8bb26;
+  --color-aqua: #8ec07c;
+  --color-blue: #83a598;
+  --color-purple: #d3869b;
+  --color-gray: #928374;
+  --font-mono: "Fira Code", ui-monospace, "SFMono-Regular", monospace;
+}
+
+@layer base {
+  h1, h2, h3 {
+    font-family: var(--font-mono);
+    color: var(--color-orange);
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+  p {
+    margin-bottom: 1em;
+  }
+  a {
+    text-underline-offset: 2px;
+  }
+}
+
+@layer components {
+  .bbs-panel {
+    @apply relative border border-gray bg-bg1 p-4;
+  }
+  .bbs-panel::before,
+  .bbs-panel::after {
+    @apply absolute text-gray font-mono select-none pointer-events-none text-lg;
+  }
+  .bbs-panel::before {
+    content: "┌";
+    top: -0.6em;
+    left: -0.4em;
+  }
+  .bbs-panel::after {
+    content: "┘";
+    bottom: -0.6em;
+    right: -0.4em;
+  }
+
+  .blink-cursor {
+    @apply inline-block w-[0.6em] h-[1em] bg-orange align-middle ml-1;
+    animation: bbs-blink 1s steps(2, start) infinite;
+  }
+}
+
+@keyframes bbs-blink {
+  to {
+    visibility: hidden;
+  }
+}
