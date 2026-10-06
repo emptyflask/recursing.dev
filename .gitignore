@@ -7,3 +7,4 @@ _site/
 assets/dist/
 .bundle/
 vendor/bundle/
+_includes/logo.html
