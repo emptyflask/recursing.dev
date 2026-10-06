@@ -8,7 +8,7 @@ layout: default
     {% if page.tags.size > 0 %}
       &middot;
       {% for tag in page.tags %}
-        <a href="{{ '/blog/tags/' | append: tag | append: '/' | relative_url }}" class="text-aqua hover:text-orange">#{{ tag }}</a>
+        <a href="{{ tag | slugify | prepend: '/blog/tags/' | append: '/' | relative_url }}" class="text-aqua hover:text-orange">#{{ tag }}</a>
       {% endfor %}
     {% endif %}
   </p>

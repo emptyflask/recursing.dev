@@ -30,7 +30,7 @@ export function buildLogoHtml(asciiText) {
   const lines = asciiText.replace(/\n$/, "").split("\n");
   const totalContentRows = lines.filter((l) => l.trim() !== "").length;
 
-  const out = ['<pre class="logo-art" aria-label="recursing.dev">'];
+  const out = ['<pre class="logo-art" aria-hidden="true">'];
   let rowCounter = 0;
   for (const line of lines) {
     if (line.trim() === "") {

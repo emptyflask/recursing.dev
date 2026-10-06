@@ -4,7 +4,7 @@ import { buildLogoHtml } from "./logo-gradient.mjs";
 describe("buildLogoHtml", () => {
   it("wraps output in a <pre class=\"logo-art\">", () => {
     const html = buildLogoHtml("██\n");
-    expect(html.startsWith('<pre class="logo-art" aria-label="recursing.dev">')).toBe(true);
+    expect(html.startsWith('<pre class="logo-art" aria-hidden="true">')).toBe(true);
     expect(html.trim().endsWith("</pre>")).toBe(true);
   });
 
