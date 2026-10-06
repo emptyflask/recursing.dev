@@ -7,7 +7,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, "src/main.ts"),
+        main: resolve(import.meta.dirname, "src/main.ts"),
       },
       output: {
         entryFileNames: "[name].js",
