@@ -38,6 +38,19 @@
   a {
     text-underline-offset: 2px;
   }
+  /* Plain Markdown-rendered links (no class) need their own color/underline —
+     Tailwind's preflight makes <a> inherit color and text-decoration, so
+     without this they're indistinguishable from surrounding body text.
+     Scoped to unclassed links only: every link already in a template
+     carries its own Tailwind classes (nav, tags, buttons, etc.) and is
+     meant to keep its own deliberate treatment. */
+  a:not([class]) {
+    color: var(--color-aqua);
+    text-decoration: underline;
+  }
+  a:not([class]):hover {
+    color: var(--color-orange);
+  }
   /* Inline code (kramdown wraps these in highlighter-rouge too, but with
      no <pre>/.highlight wrapper). Reset to plain inside code blocks below
      so it doesn't double up with the block's own background. */
