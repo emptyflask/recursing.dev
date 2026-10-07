@@ -13,11 +13,13 @@
   {% feed_meta %}
 </head>
 <body class="bg-bg0 text-fg1 font-sans min-h-screen">
+  <div class="flow-root my-4">
   {% include header.html %}
   <main class="font-mono max-w-3xl lg:max-w-4xl mx-auto py-8 px-4">
     {{ content }}
   </main>
   {% include footer.html %}
   <script type="module" src="{{ '/assets/dist/main.js' | relative_url }}"></script>
+  </div>
 </body>
 </html>
