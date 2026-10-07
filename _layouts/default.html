@@ -7,14 +7,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/fontawesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/brands.min.css">
   <link rel="stylesheet" href="{{ '/assets/dist/styles.css' | relative_url }}">
   {% feed_meta %}
 </head>
 <body class="bg-bg0 text-fg1 font-sans min-h-screen">
   {% include header.html %}
-  <main class="max-w-3xl lg:max-w-4xl mx-auto px-4 py-8">
+  <main class="font-mono max-w-3xl lg:max-w-4xl mx-auto py-8 px-4">
     {{ content }}
   </main>
+  {% include footer.html %}
   <script type="module" src="{{ '/assets/dist/main.js' | relative_url }}"></script>
 </body>
 </html>
