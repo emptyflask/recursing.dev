@@ -37,6 +37,37 @@
   a {
     text-underline-offset: 2px;
   }
+  dl {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+    margin-bottom: 1em;
+  }
+  dt {
+    font-weight: bold;
+    color: var(--color-aqua);
+  }
+  dd {
+    margin: 0;
+    color: var(--color-fg1);
+  }
+  /* Tailwind's preflight strips list-style globally. Restore bullets/numbers
+     only for bare lists (what Markdown/kramdown actually produces) — layout
+     lists like blog/tag/homepage listings always carry a utility class
+     (e.g. space-y-6) and are meant to stay unstyled. */
+  ul:not([class]) {
+    list-style-type: disc;
+    margin-left: 1.5em;
+  }
+  ol:not([class]) {
+    list-style-type: decimal;
+    margin-left: 1.5em;
+  }
+  ul:not([class]) li,
+  ol:not([class]) li {
+    margin-bottom: 0.25em;
+  }
 }
 
 @layer components {
