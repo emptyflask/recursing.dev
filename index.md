@@ -4,14 +4,13 @@ title: Home
 permalink: /
 ---
 
-<section class="bbs-panel mb-8">
-  <p class="font-mono text-fg1">
-    Hi, I'm Jon. This is recursing.dev — placeholder bio copy, replace this
-    with the real thing.
-  </p>
+<section class="bbs-panel mb-8" markdown="true">
+
+I'm Jon, this is my corner of the internet for random things that don't really belong elsewhere.
+
 </section>
 
-<h2 class="font-mono text-xl text-orange mb-4">Recent posts<span class="blink-cursor"></span></h2>
+<h2 class="text-xl text-orange mb-4">Recent posts<span class="blink-cursor"></span></h2>
 <ul class="space-y-6">
   {% for post in site.posts limit: 5 %}
     <li class="bbs-panel">
