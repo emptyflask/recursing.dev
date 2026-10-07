@@ -31,3 +31,13 @@ up `ascii.txt` changes too. Requires `node` on `PATH` (already true inside
 
 For local development with live reload, run `bundle exec jekyll serve` instead of
 `bundle exec jekyll build` as the last step.
+
+`assets/resume.pdf` is built fresh from
+[emptyflask/resume](https://github.com/emptyflask/resume) on every deploy (see
+`.github/workflows/deploy.yml`) — it's gitignored, not committed here. For local
+dev, the "Download PDF" link just 404s until you provide one yourself, e.g.:
+
+```sh
+nix build github:emptyflask/resume --out-link /tmp/resume-build
+cp /tmp/resume-build/resume.pdf assets/resume.pdf
+```

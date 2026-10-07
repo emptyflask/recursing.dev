@@ -36,6 +36,17 @@ jobs:
           ruby-version: "3.3"
           bundler-cache: true
 
+      - uses: cachix/install-nix-action@v31
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            access-tokens = github.com=${{ secrets.RESUME_REPO_TOKEN }}
+
+      - name: Build resume PDF from emptyflask/resume
+        run: |
+          nix build github:emptyflask/resume --out-link resume-build
+          cp resume-build/resume.pdf assets/resume.pdf
+
       - run: bundle exec jekyll build
 
       - uses: actions/configure-pages@v5

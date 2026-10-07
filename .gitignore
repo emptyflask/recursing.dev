@@ -9,3 +9,6 @@ assets/dist/
 .bundle/
 vendor/bundle/
 _includes/logo.html
+# Built fresh from github:emptyflask/resume on every deploy (see
+# .github/workflows/deploy.yml) — never commit a static copy here.
+assets/resume.pdf
