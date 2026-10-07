@@ -1,5 +1,6 @@
 .superpowers/
 .worktrees/
+.direnv/
 node_modules/
 _site/
 .jekyll-cache/

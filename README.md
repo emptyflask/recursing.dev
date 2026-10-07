@@ -16,9 +16,9 @@ using precompiled binaries that don't run on NixOS).
 ## Getting Started
 
 ```sh
-npm ci
-npm test
-npm run build
+pnpm install --frozen-lockfile
+pnpm test
+pnpm run build
 node scripts/build-logo.mjs
 bundle install
 bundle exec jekyll build
