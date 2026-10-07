@@ -30,7 +30,6 @@ jobs:
       - run: pnpm test
       - run: pnpm run typecheck
       - run: pnpm run build
-      - run: node scripts/build-logo.mjs
 
       - uses: ruby/setup-ruby@v1
         with:

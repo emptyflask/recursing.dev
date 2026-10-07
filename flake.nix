@@ -83,7 +83,7 @@
               echo "  bundler $(bundle --version | cut -d' ' -f3)"
               echo ""
               echo "First-time / after pulling changes:"
-              echo "  pnpm install --frozen-lockfile && pnpm run build && node scripts/build-logo.mjs && bundle install"
+              echo "  pnpm install --frozen-lockfile && pnpm run build && bundle install"
               echo "Then:"
               echo "  bundle exec jekyll serve"
             '';

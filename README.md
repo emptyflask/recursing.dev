@@ -19,10 +19,15 @@ using precompiled binaries that don't run on NixOS).
 pnpm install --frozen-lockfile
 pnpm test
 pnpm run build
-node scripts/build-logo.mjs
 bundle install
 bundle exec jekyll build
 ```
+
+The colorized ASCII logo (`_includes/logo.html`) is generated from `ascii.txt`
+automatically — a Jekyll plugin (`_plugins/generate_logo.rb`) regenerates it on
+every build, so there's no separate manual step and `jekyll serve --watch` picks
+up `ascii.txt` changes too. Requires `node` on `PATH` (already true inside
+`nix develop`).
 
 For local development with live reload, run `bundle exec jekyll serve` instead of
 `bundle exec jekyll build` as the last step.
