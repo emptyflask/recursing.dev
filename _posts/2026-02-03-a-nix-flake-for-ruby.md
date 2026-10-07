@@ -1,20 +1,20 @@
 ---
-title: "A note on gruvbox"
+title: "A nix flake for ruby"
 tags: [meta, design]
 ---
 
-Placeholder second post — replace with real content. Exists to prove the tag
-index page (`/blog/tags/meta/`) lists more than one post.
+This is the nix config I use as a starting point for all Ruby projects.
 
+We can't run `bundle install` here, so instead just use it to regenerate the lock file, and use [bundix](https://github.com/inscapist/bundix.git) to build a `gemset.nix`:
 
+```sh
+bundle lock && bundix && direnv reload
+```
+
+## flake.nix
 ```nix
 {
-  description = "SXSW Chronos";
-
-  nixConfig = {
-    extra-substituters = "https://nixpkgs-ruby.cachix.org";
-    extra-trusted-public-keys = "nixpkgs-ruby.cachix.org-1:vrcdi50fTolOxWCZZkw0jakOnUI1T19oYJ+PRYdK4SM=";
-  };
+  description = "Ruby on Nix";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -42,13 +42,12 @@ index page (`/blog/tags/meta/`) lists more than one post.
           ];
         };
 
-        rubyNix = inputs.ruby-nix.lib pkgs;
-
         gemset =
           if builtins.pathExists ./gemset.nix
           then import ./gemset.nix
           else {};
 
+        # some gems need a little help with their dependencies
         gemConfig = {
           faiss = attrs: {
             buildInputs = [pkgs.llvmPackages.openmp pkgs.openblas];
@@ -63,28 +62,24 @@ index page (`/blog/tags/meta/`) lists more than one post.
           mittens = attrs: {buildInputs = [pkgs.libstemmer];};
         };
 
+        rubyNix = inputs.ruby-nix.lib pkgs;
+
+        # use whatever is listed in .ruby-version
         rubyVersion = nixpkgs.lib.fileContents ./.ruby-version;
 
         ruby = pkgs."${rubyVersion}".override {jemallocSupport = true;};
 
         bundixcli = inputs.bundix.packages.${system}.default;
       in rec {
-        nixConfig = {
-          substituters = ["https://nixpkgs-ruby.cachix.org"];
-          trusted-public-keys = [
-            "nixpkgs-ruby.cachix.org-1:vrcdi50fTolOxWCZZkw0jakOnUI1T19oYJ+PRYdK4SM="
-          ];
-        };
 
         inherit
           (rubyNix {
             inherit gemset ruby;
-            name = "sxsw-chronos";
+            name = "rails";
             gemConfig = pkgs.defaultGemConfig // gemConfig;
-            groups = ["default" "development" "mover" "test" "toolbox"];
-          })
-          env
-          ;
+            # Use the 'toolbox' group for gems that I might use in development, but don't want loaded by the app
+            groups = ["default" "development" "test" "toolbox"];
+          }) env;
 
         devShells = {
           default = pkgs.mkShell {
@@ -94,7 +89,6 @@ index page (`/blog/tags/meta/`) lists more than one post.
                 act
                 biome
                 corepack_24
-                pass
                 rufo
                 typescript
                 typescript-language-server
