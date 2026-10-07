@@ -9,6 +9,7 @@
 
 @theme {
   --color-bg0: #282828;
+  --color-bg0-hard: #1d2021;
   --color-bg1: #3c3836;
   --color-bg2: #504945;
   --color-fg0: #fbf1c7;
@@ -42,14 +43,16 @@
      so it doesn't double up with the block's own background. */
   code {
     font-family: var(--font-mono);
-    background-color: var(--color-bg1);
+    background-color: var(--color-bg0-hard);
     padding: 0.1em 0.35em;
     border-radius: 0.2em;
     font-size: 0.9em;
   }
-  /* Rouge-highlighted fenced code blocks */
+  /* Rouge-highlighted fenced code blocks. bg0-hard (not the site's regular
+     bg0/bg1) to match gruvbox-dark-hard, same contrast as the user's Neovim
+     colorscheme (ellisonleao/gruvbox.nvim, contrast = "hard"). */
   .highlight {
-    background-color: var(--color-bg1);
+    background-color: var(--color-bg0-hard);
     border: 1px solid var(--color-gray);
     border-radius: 0.25em;
     overflow-x: auto;
