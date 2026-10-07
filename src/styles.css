@@ -37,6 +37,89 @@
   a {
     text-underline-offset: 2px;
   }
+  /* Inline code (kramdown wraps these in highlighter-rouge too, but with
+     no <pre>/.highlight wrapper). Reset to plain inside code blocks below
+     so it doesn't double up with the block's own background. */
+  code {
+    font-family: var(--font-mono);
+    background-color: var(--color-bg1);
+    padding: 0.1em 0.35em;
+    border-radius: 0.2em;
+    font-size: 0.9em;
+  }
+  /* Rouge-highlighted fenced code blocks */
+  .highlight {
+    background-color: var(--color-bg1);
+    border: 1px solid var(--color-gray);
+    border-radius: 0.25em;
+    overflow-x: auto;
+    margin-bottom: 1em;
+  }
+  .highlight pre {
+    margin: 0;
+    padding: 1em;
+  }
+  .highlight code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: 1em;
+  }
+  /* Gruvbox-mapped Rouge/Pygments token classes */
+  .highlight .c, .highlight .c1, .highlight .cm, .highlight .cs {
+    color: var(--color-gray);
+    font-style: italic;
+  }
+  .highlight .err {
+    color: var(--color-red);
+  }
+  .highlight .k, .highlight .kd, .highlight .kn, .highlight .kp,
+  .highlight .kr, .highlight .kt, .highlight .ow {
+    color: var(--color-red);
+  }
+  .highlight .o, .highlight .p {
+    color: var(--color-fg1);
+  }
+  .highlight .n {
+    color: var(--color-fg1);
+  }
+  .highlight .nb, .highlight .bp {
+    color: var(--color-aqua);
+  }
+  .highlight .nc, .highlight .nn {
+    color: var(--color-yellow);
+  }
+  .highlight .nf {
+    color: var(--color-blue);
+  }
+  .highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi {
+    color: var(--color-fg0);
+  }
+  .highlight .nt {
+    color: var(--color-red);
+  }
+  .highlight .na {
+    color: var(--color-aqua);
+  }
+  .highlight .s, .highlight .s1, .highlight .s2, .highlight .sb,
+  .highlight .sc, .highlight .sd, .highlight .se, .highlight .sh,
+  .highlight .si, .highlight .sx, .highlight .ss {
+    color: var(--color-green);
+  }
+  .highlight .m, .highlight .mf, .highlight .mh, .highlight .mi,
+  .highlight .mo, .highlight .il, .highlight .kc {
+    color: var(--color-purple);
+  }
+  .highlight .gd {
+    color: var(--color-red);
+  }
+  .highlight .gi {
+    color: var(--color-green);
+  }
+  .highlight .gh {
+    color: var(--color-orange);
+    font-weight: bold;
+  }
   dl {
     display: grid;
     grid-template-columns: max-content 1fr;
