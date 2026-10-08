@@ -128,14 +128,14 @@ Studied VFX, compositing, procedural effects, shader programming, design, and a 
 
 ## PROJECTS
 
-nix-config
+[nix-config](https://github.com/emptyflask/nix-config/)
 : Multi-host NixOS flake for my desktops and homelab.
 
-rails-nix
+[rails-nix](https://github.com/emptyflask/rails-nix)
 : Example Rails app using Nix for all dependencies.
 
 other open-source
-: Contributed to nixpkgs, dry-rb, elasticsearch-rails, xmonad-contrib, fmrest-ruby, etc.
+: Contributed to [nixpkgs](https://github.com/NixOS/nixpkgs/), [dry-rb](https://github.com/dry-rb), [elasticsearch-rails](https://github.com/elastic/elasticsearch-rails), [xmonad-contrib](https://github.com/xmonad/xmonad-contrib), [fmrest-ruby](https://github.com/beezwax/fmrest-ruby), etc.
 
 
 </div>

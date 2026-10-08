@@ -29,8 +29,11 @@ every build, so there's no separate manual step and `jekyll serve --watch` picks
 up `ascii.txt` changes too. Requires `node` on `PATH` (already true inside
 `nix develop`).
 
-For local development with live reload, run `bundle exec jekyll serve` instead of
-`bundle exec jekyll build` as the last step.
+For local development with live reload:
+
+```
+jekyll serve --port 4001 --livereload
+```
 
 `assets/resume.pdf` is built fresh from
 [emptyflask/resume](https://github.com/emptyflask/resume) on every deploy (see
