@@ -1,11 +1,11 @@
 ---
-title: "A nix flake for ruby"
-tags: [meta, design]
+title: "A Nix flake for Ruby"
+tags: [nix, ruby]
 ---
 
 This is the nix config I use as a starting point for all Ruby projects.
 
-We can't run `bundle install` here, so instead just use it to regenerate the lock file, and use [bundix](https://github.com/inscapist/bundix.git) to build a `gemset.nix`:
+We can't run `bundle install` here, so instead just use it to regenerate the lock file, and use [inscapist's fork of bundix](https://github.com/inscapist/bundix.git) to build a `gemset.nix`:
 
 ```sh
 bundle lock && bundix && direnv reload
@@ -47,7 +47,7 @@ bundle lock && bundix && direnv reload
           then import ./gemset.nix
           else {};
 
-        # some gems need a little help with their dependencies
+        # some gems may need a little help with their dependencies. this is a real example:
         gemConfig = {
           faiss = attrs: {
             buildInputs = [pkgs.llvmPackages.openmp pkgs.openblas];
