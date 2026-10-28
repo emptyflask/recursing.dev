@@ -13,7 +13,7 @@ permalink: /resume/
 
 ## SUMMARY
 
-Lead software engineer with 15+ years building Ruby on Rails and, more recently, TypeScript systems. I specialize in search, authentication, and high-traffic event platforms, with Nix at work and at home.
+Lead software engineer with 15+ years building mostly with Ruby and TypeScript/JavaScript. I specialize in search, authentication, and high-traffic event platforms, with Nix at work and at home.
 
 </div>
 
