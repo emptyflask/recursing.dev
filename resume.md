@@ -13,7 +13,12 @@ permalink: /resume/
 
 ## SUMMARY
 
-Lead software engineer with 15+ years building mostly with Ruby and TypeScript/JavaScript. I specialize in search, authentication, and high-traffic event platforms, with Nix at work and at home.
+  Lead software engineer with 15+ years building complex software products,
+  primarily with Ruby on Rails and TypeScript. Experienced in technical
+  architecture, search and data-intensive systems, indexing pipelines, identity
+  integrations, and high-traffic applications. Technical lead for teams of 6–10
+  engineers, with a focus on scalable data models, reusable architecture, and
+  delivering complex projects.
 
 </div>
 
@@ -27,19 +32,16 @@ Languages
 Frameworks
 : Ruby on Rails, Hanami, React, SolidJS
 
-Search
-: OpenSearch / Elasticsearch
+Identity & Auth
+: SAML, OAuth2/PKCE, JWT, SSO, Okta, Doorkeeper, role-based access control
 
-Auth
-: SAML, OAuth2 / PKCE, JWT, SSO, Okta, Doorkeeper
+Data & Search
+: PostgreSQL, OpenSearch/Elasticsearch, Redis, MySQL, CouchDB
 
-Data
-: PostgreSQL, pgvector, Redis, MySQL, CouchDB
+Infrastructure
+: AWS, Docker, Ansible, Github Actions, Terraform, Nix
 
-Infra
-: Nix, Docker, Ansible, AWS, Github Actions
-
-OS
+Operating Systems
 : Linux (NixOS, Debian / Ubuntu, Gentoo), macOS
 
 </div>
@@ -54,13 +56,13 @@ OS
 *South by Southwest*  
 Remote
 
-- Technical lead for a team of 6–10 developers. Build reference architecture the team reuses across projects, review pull requests, and mentor less experienced engineers.
-- Designed a search architecture for the SXSW schedule, using OpenSearch (Elasticsearch) as a read-optimized store for the frontend and Postgres as the normalized source of truth.
-- Built custom index mappings and denormalized documents across several models, with a presentation layer that shapes results, highlights, and aggregations for faceted search in a React frontend.
-- Led a phased migration to unified SSO across SXSW’s Rails and WordPress properties: Clearance sessions with Redis broadcast, a bridge between the .sxsw.com and .sxswedu.com domains, and OAuth2 / PKCE with JWT for the mobile app.
+- Provide technical leadership for a team of 6-10 developers, establishing reusable reference architecture, guiding design decisions, reviewing code, and mentoring engineers across projects.
+- Designed a search architecture combining PostgreSQL as the normalized source of truth with OpenSearch as a read-optimized search layer, indexing ~100,000 event, person, artist, and film documents with custom mappings, denormalization across multiple models, and faceted search with aggregations.
+- Led a phased migration to unified SSO across Rails and WordPress applications, implementing shared session management with Redis, cross-domain authentication, and OAuth2/PKCE with JWT for the mobile app.
 - Rebuilt the attendee recommendations system on pgvector.
 - Run development workflows in Jira and GitHub, maintain CI pipelines, Docker and Ansible configuration, and Nix dev environments, and handle AWS infrastructure changes.
 - Building MCP tools that let attendees query the schedule through LLM agents.
+- Using AI-assisted development tools to accelerate development, while validating through review and automated tests.
 
 ### Mar 2021 – Mar 2022
 
@@ -68,12 +70,10 @@ Remote
 *Proof (formerly Notarize)*  
 Remote
 
-- Built SAML single sign-on through Okta for internal staff, mapping Okta groups to role-based access control in the app.
-- Integrated with eOriginal’s eVault to securely store the authoritative copies of digitally signed documents.
+- Implemented SAML single sign-on through Okta for internal staff, integrating an external identity provider and mapping identity-provider groups to application role-based access controls.
+- Integrated with eOriginal's eVault to securely store the authoritative copies of digitally signed documents.
 - Built a CLI tool around a Java PDF library for document processing.
 - Refactored flaky and slow rspec+factorybot tests to improve CI reliability.
-- Converted / refactored legacy JavaScript to TypeScript.
-- Migrated application configuration to AWS Parameter Store as part of the move from Heroku to AWS.
 
 ### Oct 2012 – Mar 2021
 
@@ -93,7 +93,7 @@ Austin, TX
 *Various*  
 Austin, TX
 
-- Built Rails, Drupal, and WordPress projects for clients including SXSW, Dell, UT Austin, Austin Humane Society, and Scott & White.
+- Built Rails, Drupal, and WordPress projects for clients including SXSW, Dell, UT Austin, Austin Humane Society, and Baylor Scott & White Health Plan.
 
 ### Sep 2008 – Sep 2009
 
@@ -119,7 +119,7 @@ Web / UX designer, and CG artist roles in Austin and Indianapolis.
 **Savannah College of Art & Design**  
 *BFA in Computer Art*  
 
-Studied VFX, compositing, procedural effects, shader programming, design, and a ton of art history.
+Studied visual effects, compositing, particle systems, procedural modeling, shader programming, design, and a ton of art history.
 
 </div>
 
@@ -144,6 +144,6 @@ other open-source
 
 ## INTERESTS
 
-Functional programming (Haskell, Elixir, Gleam, Elm, Rust*), cooking, gardening, mushroom foraging, guitar (badly), bicycles, photography.
+Functional programming (Haskell, Nix, Elixir, Gleam, Elm, Rust*), cooking, gardening, mushroom foraging, guitar (badly), bicycles, photography.
 
 </div>
