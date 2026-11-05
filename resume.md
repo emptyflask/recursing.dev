@@ -13,12 +13,10 @@ permalink: /resume/
 
 ## SUMMARY
 
-  Lead software engineer with 15+ years building complex software products,
-  primarily with Ruby on Rails and TypeScript. Experienced in technical
-  architecture, search and data-intensive systems, indexing pipelines, identity
-  integrations, and high-traffic applications. Technical lead for teams of 6–10
-  engineers, with a focus on scalable data models, reusable architecture, and
-  delivering complex projects.
+  Lead software engineer with 15+ years building products in Ruby on Rails and
+  TypeScript. Specialized in search, indexing pipelines, identity integrations,
+  and high-traffic, data-intensive applications. Technical lead for teams of
+  6–10 engineers, designing scalable data models and reusable architecture.
 
 </div>
 
