@@ -35,12 +35,14 @@ For local development with live reload:
 jekyll serve --port 4001 --livereload
 ```
 
-`assets/resume.pdf` is built fresh from
+`assets/resume.pdf` and `resume.md` are built fresh from the committed
 [emptyflask/resume](https://github.com/emptyflask/resume) on every deploy (see
-`.github/workflows/deploy.yml`) — it's gitignored, not committed here. For local
-dev, the "Download PDF" link just 404s until you provide one yourself, e.g.:
+`.github/workflows/deploy.yml`) — both are gitignored, not committed here. For
+local dev, `/resume/` and the "Download PDF" link 404 until you build them
+yourself, e.g.:
 
 ```sh
-nix build github:emptyflask/resume --out-link /tmp/resume-build
+nix build --refresh git+ssh://git@github.com/emptyflask/resume --out-link /tmp/resume-build
 cp /tmp/resume-build/resume.pdf assets/resume.pdf
+ruby scripts/resume2md.rb git+ssh://git@github.com/emptyflask/resume
 ```

@@ -47,6 +47,9 @@ jobs:
           nix build github:emptyflask/resume --out-link resume-build
           cp resume-build/resume.pdf assets/resume.pdf
 
+      - name: Build resume.md from emptyflask/resume
+        run: ruby scripts/resume2md.rb
+
       - run: bundle exec jekyll build
 
       - uses: actions/configure-pages@v5
