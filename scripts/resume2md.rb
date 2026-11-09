@@ -75,9 +75,10 @@ def block(tex)
   end
 end
 
-meta = IO.popen(["nix", "flake", "metadata", "--refresh", "--json", REF], &:read)
-abort "nix flake metadata #{REF} failed" unless $?.success?
-src = File.read(File.join(JSON.parse(meta).fetch("path"), "resume.tex"))
+# prefetch, unlike `flake metadata`, guarantees the source is in the store.
+meta = IO.popen(["nix", "flake", "prefetch", "--refresh", "--json", REF], &:read)
+abort "nix flake prefetch #{REF} failed" unless $?.success?
+src = File.read(File.join(JSON.parse(meta).fetch("storePath"), "resume.tex"))
 body = src[/\\begin\{document\}(.*)\\end\{document\}/m, 1]
 body = body.gsub(/(?<!\\)%.*$/, "")
 
