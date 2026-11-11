@@ -1,7 +1,12 @@
 ---
 title: "Two months of Hermes"
 tags: [ai, homelab]
+image: /assets/images/two-months-of-hermes-og.jpg
+thumbnail: /assets/images/two-months-of-hermes.jpg
+description: After things didn't really work out with OpenClaw, I gave agents another chance.
 ---
+
+![Ancient Greek red-figure painting of a seated Hermes holding a caduceus](/assets/images/two-months-of-hermes.jpg){: class="float-right w-40 sm:w-64 ml-4 mb-2"}
 
 The first time I attempted to build an agent was back in July, when OpenClaw
 was getting a lot of attention. It never really got off the ground, as I felt
@@ -63,12 +68,13 @@ my calendar, and nags me to get some exercise. I had it write a script to watch
 for dogs that were recently added to three different adoption sites.
 
 The coolest ability though is that I connected it to an [Obsidian vault MCP
-server](https://github.com/bitbonsai/mcpvault) that runs against a self-hosted
-headless livesync instance of my Obsidian notes. Any changes to my notes are
-instantly synced through CouchDB across all devices, one of them being my
-server laptop. So the agent can read and write notes. I can give it a URL to a
-recipe and have it copied into a template and filed away in the right place. I
-don't even have to scroll down through pages of opinions and product
+server](https://github.com/bitbonsai/mcpvault) that runs against a [self-hosted
+headless livesync instance of my Obsidian
+notes](/blog/2026/11/11/a-headless-obsidian-vault-for-hermes/). Any changes to
+my notes are instantly synced through CouchDB across all devices, one of them
+being my server laptop. So the agent can read and write notes. I can give it a
+URL to a recipe and have it copied into a template and filed away in the right
+place. I don't even have to scroll down through pages of opinions and product
 recommendations, I just let the agent find the relevant data.
 
 It's also good at keeping the rest of my Obsidian vault organized -- like

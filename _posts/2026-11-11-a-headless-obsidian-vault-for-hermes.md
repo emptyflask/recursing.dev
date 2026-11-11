@@ -2,6 +2,7 @@
 title: "A headless Obsidian vault for Hermes"
 tags: [nix, homelab, ai]
 image: /assets/images/headless-obsidian-vault-for-hermes.png
+thumbnail: /assets/images/headless-obsidian-vault-for-hermes-diagram.png
 description: My agent can read, write, and organize my Obsidian notes, and changes appear a moment later on my devices. Here's how.
 ---
 

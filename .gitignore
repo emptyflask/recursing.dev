@@ -15,3 +15,4 @@ assets/resume.pdf
 
 # Generated from the same source by scripts/resume2md.rb.
 resume.md
+tmp/
