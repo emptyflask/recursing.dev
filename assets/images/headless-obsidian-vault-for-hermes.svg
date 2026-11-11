@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="Fira Code, monospace">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a89984"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="630" fill="#282828"/>
+
+  <!-- title -->
+  <text x="60" y="92" font-size="44" font-weight="600" fill="#ebdbb2">A headless Obsidian vault for Hermes</text>
+  <text x="60" y="136" font-size="21" fill="#928374">LiveSync + CouchDB + a packaged CLI, so an agent can edit my notes</text>
+
+  <!-- devices -->
+  <rect x="60" y="240" width="220" height="230" rx="6" fill="#3c3836" stroke="#fe8019" stroke-width="3"/>
+  <text x="170" y="282" font-size="22" font-weight="600" fill="#fe8019" text-anchor="middle">obsidian</text>
+  <rect x="90" y="310" width="160" height="56" rx="4" fill="#282828" stroke="#504945" stroke-width="2"/>
+  <text x="170" y="345" font-size="19" fill="#ebdbb2" text-anchor="middle">desktop</text>
+  <rect x="90" y="384" width="160" height="56" rx="4" fill="#282828" stroke="#504945" stroke-width="2"/>
+  <text x="170" y="419" font-size="19" fill="#ebdbb2" text-anchor="middle">phone</text>
+
+  <!-- couchdb -->
+  <rect x="380" y="300" width="200" height="110" rx="6" fill="#3c3836" stroke="#8ec07c" stroke-width="3"/>
+  <text x="480" y="348" font-size="24" font-weight="600" fill="#8ec07c" text-anchor="middle">CouchDB</text>
+  <text x="480" y="380" font-size="18" fill="#928374" text-anchor="middle">fly.io</text>
+
+  <!-- device <-> couch -->
+  <line x1="286" y1="355" x2="374" y2="355" stroke="#a89984" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)"/>
+  <text x="330" y="337" font-size="15" fill="#928374" text-anchor="middle">e2ee</text>
+
+  <!-- newton -->
+  <rect x="660" y="200" width="490" height="320" rx="8" fill="none" stroke="#504945" stroke-width="3" stroke-dasharray="10 8"/>
+  <text x="680" y="500" font-size="17" fill="#928374">newton · NixOS</text>
+
+  <rect x="690" y="235" width="170" height="80" rx="6" fill="#3c3836" stroke="#b8bb26" stroke-width="3"/>
+  <text x="775" y="270" font-size="20" font-weight="600" fill="#b8bb26" text-anchor="middle">livesync-cli</text>
+  <text x="775" y="297" font-size="15" fill="#928374" text-anchor="middle">daemon</text>
+
+  <rect x="690" y="385" width="170" height="80" rx="6" fill="#3c3836" stroke="#83a598" stroke-width="3"/>
+  <text x="775" y="420" font-size="20" font-weight="600" fill="#83a598" text-anchor="middle">vault/</text>
+  <text x="775" y="447" font-size="15" fill="#928374" text-anchor="middle">*.md</text>
+
+  <rect x="950" y="385" width="170" height="80" rx="6" fill="#3c3836" stroke="#fabd2f" stroke-width="3"/>
+  <text x="1035" y="420" font-size="20" font-weight="600" fill="#fabd2f" text-anchor="middle">mcpvault</text>
+  <text x="1035" y="447" font-size="15" fill="#928374" text-anchor="middle">MCP server</text>
+
+  <rect x="950" y="235" width="170" height="80" rx="6" fill="#3c3836" stroke="#d3869b" stroke-width="3"/>
+  <text x="1035" y="270" font-size="20" font-weight="600" fill="#d3869b" text-anchor="middle">hermes</text>
+  <text x="1035" y="297" font-size="15" fill="#928374" text-anchor="middle">agent</text>
+
+  <!-- couch <-> cli -->
+  <path d="M586,340 C630,340 640,275 684,275" fill="none" stroke="#a89984" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)"/>
+  <!-- cli <-> vault -->
+  <line x1="775" y1="321" x2="775" y2="379" stroke="#a89984" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)"/>
+  <!-- vault <-> mcpvault -->
+  <line x1="866" y1="425" x2="944" y2="425" stroke="#a89984" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)"/>
+  <!-- mcpvault <-> hermes -->
+  <line x1="1035" y1="379" x2="1035" y2="321" stroke="#a89984" stroke-width="3" marker-start="url(#a)" marker-end="url(#a)"/>
+
+  <!-- footer -->
+  <g transform="translate(60,560)" shape-rendering="crispEdges">
+    <rect x="0" y="0" width="32" height="32" fill="#1d2021"/>
+    <rect x="2" y="2" width="28" height="28" fill="none" stroke="#fe8019" stroke-width="3"/>
+    <rect x="8" y="8" width="16" height="16" fill="none" stroke="#b8bb26" stroke-width="3"/>
+    <rect x="14" y="14" width="4" height="4" fill="#83a598"/>
+  </g>
+  <text x="106" y="584" font-size="20" fill="#ebdbb2">recursing.dev</text>
+</svg>
